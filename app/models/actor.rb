@@ -5,6 +5,9 @@ def full_name
 "#{self.first_name} #{self.last_name}"
 end
 def list_roles
-"#{Character.name}- #{Character.show.name}"
+ self.characters.map do |character|
+    "#{character.name} - #{character.show.name}"
+  end
 end
 end
+
